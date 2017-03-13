@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+<h2> Cronometro</h2>
+<button (click)="start()">Eempezar</button>
+<button (click)="lapso()">Lapso</button>
+<button (click)="stop()">Parar</button>
+<div>
+  <p>{{hora}} : {{minuto}} : {{segundos}}</p>
+  <p *ngFor="let hora of collection" >{{hora.hora}} : {{hora.minutos}} : {{hora.segundos}}</p>
+</div>
