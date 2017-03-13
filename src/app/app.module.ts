@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {Chronometer} from './chronometer'
+import { Chronometer } from './chronometer'
+import { ClockFactory } from './class/clockFactory'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import {Chronometer} from './chronometer'
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ClockFactory],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

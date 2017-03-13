@@ -1,38 +1,39 @@
-import {Component} from '@angular/core';
-import {Clock} from './class/clock';
+import { Component } from '@angular/core';
+import { Clock } from './class/clock';
+import { ClockFactory } from './class/clockFactory'
 
 @Component({selector: 'chronometer', templateUrl: './chronometer.html'})
 
 export class Chronometer {
-  public hora : number;
-  public minuto : number;
-  public segundos : number;
+  public hour : number = 0;
+  public minutes : number  = 0;
+  public seconds : number  = 0;
 
-  public horaLapso : number = 0;
-  public minutoLapso : number = 0;
-  public segundosLapso : number = 0;
+  public hourLapso : number = 0;
+  public minutesLapso : number = 0;
+  public secondsLapso : number = 0;
 
   public collection : Array < Clock > = [];
   public contador : any;
 
-  constructor() {
-    this.hora = 0;
-    this.minuto = 0;
-    this.segundos = 0;
+  public clockFactory:ClockFactory;
+
+  constructor(clockFacory:ClockFactory) {
+    this.clockFactory = clockFacory;
   }
 
   start = () => {
     if (this.contador == undefined) {
       this.contador = setInterval(() => {
-        this.segundos++;
-        if (this.segundos === 60) {
-          this.segundos = 0;
-          this.minuto++;
-          if (this.minuto === 60) {
-            this.minuto = 0;
-            this.hora++;
-            if (this.hora === 20) {
-              this.hora = 0;
+        this.seconds++;
+        if (this.seconds === 60) {
+          this.seconds = 0;
+          this.minutes++;
+          if (this.minutes === 60) {
+            this.minutes = 0;
+            this.hour++;
+            if (this.hour === 20) {
+              this.hour = 0;
             }
           }
         }
@@ -41,15 +42,15 @@ export class Chronometer {
   }
 
   lapso = () => {
-    let obj = new Clock(this.hora, this.minuto, this.segundos);
+    let obj = this.clockFactory.newClock(this.hour, this.minutes, this.seconds);
     this.collection.push(obj);
   }
 
   stop = () => {
     clearInterval(this.contador);
-    this.hora = 0;
-    this.minuto = 0;
-    this.segundos = 0;
+    this.hour = 0;
+    this.minutes = 0;
+    this.seconds = 0;
     this.contador = null;
   }
 }

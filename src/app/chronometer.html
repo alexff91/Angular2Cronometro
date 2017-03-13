@@ -2,6 +2,6 @@
 <button (click)="lapso()">Lapso</button>
 <button (click)="stop()">Parar</button>
 <div>
-  <p>{{hora}} : {{minuto}} : {{segundos}}</p>
-  <p *ngFor="let hour of collection">{{hour.hour}} : {{hour.minutes}} : {{hour.seconds}}</p>
+  <p>{{hour}} : {{minutes}} : {{seconds}}</p>
+  <p *ngFor="let hour of collection">{{hour.getHour()}} : {{hour.minutes}} : {{hour.seconds}}</p>
 </div>
