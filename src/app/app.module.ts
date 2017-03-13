@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {Chronometer} from './chronometer'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Chronometer
   ],
   imports: [
     BrowserModule,

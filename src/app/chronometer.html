@@ -1,0 +1,7 @@
+<button (click)="start()">Eempezar</button>
+<button (click)="lapso()">Lapso</button>
+<button (click)="stop()">Parar</button>
+<div>
+  <p>{{hora}} : {{minuto}} : {{segundos}}</p>
+  <p *ngFor="let hour of collection">{{hour.hour}} : {{hour.minutes}} : {{hour.seconds}}</p>
+</div>
