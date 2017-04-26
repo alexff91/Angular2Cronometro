@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import { browser, element, by } from 'protractor/globals';
 
-export class MyAppPage {
+export class CroNG2Page {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,0 +1,23 @@
+
+  <br>cron-generator works!
+  <br><hr>
+
+<span>
+  <select name="every" id="every">
+    <option value="Hour">Hour</option>
+    <option value="Minute">Minute</option>
+    <option value="Day">Day</option>
+    <option value="Week">Week</option>
+    <option value="Month">Month</option>
+    <option value="Year">Year</option>
+  </select>
+</span>
+ {{this.mySelector.frequencySelector}}
+
+<div>
+Every:<select name="frequency" id="frequency">
+  <option value="#" *ngFor="let element of mySelector.frequencySelector">{{element.value}} {{element.label}}</option>
+</select>
+
+</div>
+

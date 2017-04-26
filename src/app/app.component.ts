@@ -1,12 +1,10 @@
-import {Component} from '@angular/core';
-import {Chronometer} from './chronometer'
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root', 
-  templateUrl: './app.component.html', 
-  styleUrls: ['./app.component.css'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-  title = 'Mi primera aplicación Angular 2!';  
+  title = 'app works!';
 }

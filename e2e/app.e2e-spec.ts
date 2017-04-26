@@ -1,10 +1,10 @@
-import { MyAppPage } from './app.po';
+import { CroNG2Page } from './app.po';
 
-describe('my-app App', () => {
-  let page: MyAppPage;
+describe('cro-ng2 App', function() {
+  let page: CroNG2Page;
 
   beforeEach(() => {
-    page = new MyAppPage();
+    page = new CroNG2Page();
   });
 
   it('should display message saying app works', () => {
